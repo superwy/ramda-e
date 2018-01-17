@@ -2,16 +2,12 @@
   "name": "@superwy/ramda-e",
   "version": "0.0.1",
   "description": "",
-  "module": "es/index.js",
-  "main": "src/index.js",
-  "unpkg": "dist/ramda-e.min.js",
-  "jsdelivr": "dist/ramda-e.min.js",
+  "main": "dist/ramda-e-min.js",
+  "typings": "src/index.d.ts",
   "scripts": {
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir src",
-    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/ramda.js",
-    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/ramda.min.js",
-    "build": "npm run build:es && npm run build:cjs && npm run build:umd && npm run build:umd:min",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/ramda-e.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/ramda-e.min.js",
+    "build": "npm run build:umd && npm run build:umd:min",
     "dev": "rollup -c -w"
   },
   "repository": {
@@ -24,8 +20,6 @@
     "url": "https://github.com/superwy/ramda-e/issues"
   },
   "files": [
-    "es",
-    "src",
     "dist"
   ],
   "homepage": "https://github.com/superwy/ramda-e#readme",
