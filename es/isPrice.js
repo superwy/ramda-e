@@ -13,9 +13,9 @@
  *      RE.isPrice('0.12');       //=>  true
  *      RE.isPrice(10.1);      //=> true
  */
-var isPrice = function isPrice(val) {
-  var reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
-  return reg.test("" + val);
+const isPrice = function isPrice (val) {
+    const reg = /(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/;
+    return reg.test("" + val);
 };
 
 export default isPrice;
