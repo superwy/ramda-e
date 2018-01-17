@@ -1,3 +1,9 @@
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.RE = {})));
+}(this, (function (exports) { 'use strict';
+
 /**
  * Checks if value is `Price`.
  *
@@ -18,4 +24,12 @@ var isPrice = function isPrice(val) {
   return reg.test("" + val);
 };
 
-export default isPrice;
+/**
+ * @namespace RE
+ */
+
+exports.isPrice = isPrice;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
