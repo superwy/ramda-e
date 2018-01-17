@@ -20,6 +20,7 @@
     "url": "https://github.com/superwy/ramda-e/issues"
   },
   "files": [
+    "src",
     "dist"
   ],
   "homepage": "https://github.com/superwy/ramda-e#readme",
