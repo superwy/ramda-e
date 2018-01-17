@@ -7,7 +7,7 @@ declare namespace RamdaE {
         /**
          * Checks if input value is `Price`.
          */
-        isPrice(val: any): val is Array<any>;
+        isInputPrice(val: any): boolean;
     }
 
 }
