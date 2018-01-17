@@ -1,8 +1,8 @@
 {
-  "name": "ramda-e",
+  "name": "@superwy/ramda-e",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/ramda-e.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
