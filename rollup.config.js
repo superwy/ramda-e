@@ -4,6 +4,7 @@ import uglify from 'rollup-plugin-uglify'
 
 const config = {
     input: 'src/index.js',
+    sourceMap: true,
     output: {
         format: 'umd',
         name: 'RE',
