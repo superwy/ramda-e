@@ -1,13 +1,13 @@
 import babel from 'rollup-plugin-buble';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from 'rollup-plugin-node-resolve'
+import uglify from 'rollup-plugin-uglify'
 
-export default {
+const config = {
     input: 'src/index.js',
     output: {
         format: 'umd',
         name: 'RE',
-        exports: 'named',
-        file: 'dist/ramda-e.js'
+        exports: 'named'
     },
     plugins: [
         resolve(),
@@ -16,3 +16,18 @@ export default {
         })
     ]
 }
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        uglify({
+            compress: {
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                warnings: false
+            }
+        })
+    );
+}
+
+export default config

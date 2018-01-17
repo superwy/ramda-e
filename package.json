@@ -4,7 +4,9 @@
   "description": "",
   "main": "dist/ramda-e.js",
   "scripts": {
-    "build": "rollup -c",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/ramda-e.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/ramda-e.min.js",
+    "build": "npm run build:umd && npm run build:umd:min",
     "dev": "rollup -c -w"
   },
   "repository": {
@@ -25,9 +27,12 @@
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-latest": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "i": "^0.3.6",
     "rollup": "^0.54.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-buble": "^0.18.0",
-    "rollup-plugin-node-resolve": "^3.0.2"
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }
