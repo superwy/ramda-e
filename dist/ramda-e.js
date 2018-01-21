@@ -44,12 +44,55 @@ var isInputInteger = function isInputInteger(val) {
     return reg.test(val)
 };
 
+var fMultiply = function fMultiply (a, b) {
+    var m = 0;
+    var t1 = a.toString();
+    var t2 = b.toString();
+    try {
+        m += t1.split('.')[1].length;
+    } catch (e) {
+    }
+    try {
+        m += t2.split('.')[1].length;
+    } catch (e) {
+    }
+    return Number(t1.replace('.', '')) * Number(t2.replace('.', '')) / Math.pow(10, m)
+};
+
+var fDivide = function fMultiply(a, b) {
+    var t1 = 0;
+    var t2 = 0;
+    var r1;
+    var r2;
+    try {
+        t1 = a.split('.')[1].length;
+    } catch (e) {}
+    try {
+        t2 = b.split('.')[1].length;
+    } catch (e) {}
+    r1 = Number(a.toString().replace('.', ''));
+    r2 = Number(b.toString().replace('.', ''));
+    return (r1 / r2) * Math.pow(10, t2 - t1)
+};
+
+var fenToYuan = function fenToYuan (val) {
+    return fDivide(parseFloat(val), 100)
+};
+
+var yuanToFen = function yuanToFen (val) {
+    return fMultiply(parseFloat(val), 100)
+};
+
 /**
  * @namespace RE
  */
 
 exports.isInputPrice = isInputPrice;
-exports.isInputInterger = isInputInteger;
+exports.isInputInteger = isInputInteger;
+exports.fMultiply = fMultiply;
+exports.fDivide = fDivide;
+exports.fenToYuan = fenToYuan;
+exports.yuanToFen = yuanToFen;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
